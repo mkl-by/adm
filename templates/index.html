@@ -1,0 +1,44 @@
+{% extends "bootstrap/base.html" %}
+
+<!DOCTYPE html>
+{% block html_attribs %} lang="en"{% endblock %}
+
+<head>
+    <meta charset="UTF-8">
+    {% block title %} Заголовок сайта {% endblock %}
+    <link rel="stylesheet" type="text/css" href="/static/bootstap.css">
+</head>
+
+<body>
+
+{#панель навбар#}
+
+{% block navbar %}
+    <div class="navbar navbar-fixed-top">
+        <!-- ... -->
+    </div>
+{% endblock %}
+
+{#основной кусок программы#}
+
+{% block content %}
+
+
+    <h1>hi</h1>
+    <a href="{{ url_for('statistic.hello') }}">statistic</a>
+    {% if current_user.has_role('admin') %}
+        <h3>akjshdfklhdfh</h3>
+
+    {% endif %}
+
+    <a href="logout">logout</a>
+
+    {% block cont %}
+
+    {% endblock %}
+
+
+{% endblock %}
+
+</body>
+</html>
